@@ -3,6 +3,7 @@ import NavComponent from "@/components/navComponent.vue";
 import FooterComponent from "@/components/footerComponent.vue";
 import {useProductStore} from "@/stores/productStore.js";
 import {useWinkelStore} from "@/stores/winkelStore";
+import {useAnimationStore} from "@/stores/animationStore";
 
 export default {
   name: "itemView",
@@ -28,6 +29,9 @@ export default {
     addToCart(item){
       const winkelStore= useWinkelStore();
       winkelStore.addToCart(item);
+    },
+    animateElement(){
+      useAnimationStore().setElementAnimating(true);
     }
   }
 }
@@ -60,7 +64,7 @@ export default {
       </div>
       </div>
       <div class="toevoegen">
-        <button class="button" v-on:click="addToCart(this.producten)">+ <img src="@/assets/winkelmand.png" alt="voeg toe aan winkelmand"><span
+        <button class="button" v-on:click="addToCart(this.producten); animateElement()">+ <img src="@/assets/winkelmand.png" alt="voeg toe aan winkelmand"><span
             class="button-winkelmand-text"> Voeg toe aan je winkelmand</span></button>
       </div>
     </div>
