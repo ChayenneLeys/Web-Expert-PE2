@@ -1,0 +1,107 @@
+@use 'base' as *;
+
+.main-planten {
+  @include flex-between();
+  width: 80%;
+  margin: 5rem auto;
+
+  .filter {
+    width: 30%;
+    height: 22rem;
+    background-color: $white;
+    border-radius: 1rem;
+    margin: 0 2rem;
+    padding: 2rem;
+
+    h2 {
+      font-family: $titels;
+      color: $secondary-color;
+    }
+
+    h3 {
+      padding: 0.5rem 0;
+    }
+    .button{
+      margin: 1rem 0;
+
+    }
+  }
+
+  .onze-planten {
+    width: 70%;
+
+    h1 {
+      font-family: $titels;
+      color: $primary-color;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    .onze-planten-lijst {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+
+    .paginanummers {
+      width: 40%;
+      margin: 2rem auto 0 auto;
+
+      ul {
+        @include flex-between();
+
+        li {
+          list-style-type: none;
+          padding: 0.3rem 0;
+          width: 2rem;
+          text-align: center;
+          border: 1px solid $black;
+
+          &:hover {
+            border: 2px solid $secondary-color;
+          }
+
+          a:hover {
+            color: $secondary-color;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .main-planten {
+    flex-direction: column;
+
+    .filter {
+      width: 95%;
+      margin: 0 auto;
+    }
+
+    .onze-planten {
+      width: 100%;
+      margin-top: 5rem;
+
+      h1 {
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .main-planten {
+    width: 95%;
+  }
+}

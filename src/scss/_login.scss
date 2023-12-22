@@ -1,0 +1,72 @@
+@use 'base' as *;
+
+.main-login {
+  @include flex-between();
+  width: 80%;
+  margin: 5rem auto;
+
+  h1 {
+    font-family: $titels;
+    color: $secondary-color;
+  }
+
+  p {
+    padding: 2rem 0;
+  }
+  label{
+    padding-right: 1rem;
+  }
+
+  .aanmelden {
+    width: 50%;
+  }
+
+  #wachtwoord-vergeten {
+    text-decoration: none;
+    font-size: 11pt;
+    color: $secondary-color;
+
+    &:hover {
+      font-weight: 600;
+    }
+  }
+
+  .registreren {
+    width: 50%;
+
+    #maak-account {
+      margin-top: 2rem;
+    }
+  }
+
+  input, select {
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .main-login {
+    flex-direction: column;
+    width: 95%;
+    margin: 2rem auto;
+
+    .aanmelden {
+      width: 95%;
+      margin: 0 auto 5rem auto;
+
+      h1 {
+        text-align: center;
+      }
+    }
+
+    .registreren {
+      width: 95%;
+      margin: 0 auto;
+
+      h1 {
+        text-align: center;
+      }
+
+    }
+  }
+}

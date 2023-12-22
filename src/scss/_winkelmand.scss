@@ -1,0 +1,80 @@
+@use 'base' as *;
+
+.main-winkelmand {
+  width: 60%;
+  margin: 5rem auto;
+
+  h1 {
+    font-family: $titels;
+    color: $primary-color;
+    text-align: center;
+  }
+
+  .cart-item {
+    @include flex-between;
+    height: 10rem;
+    align-items: center;
+
+    img {
+      height: 80%;
+      width: fit-content;
+    }
+
+    .item-titel {
+        width: 12rem;
+      font-family: $titels;
+      color: $secondary-color;
+    }
+
+    input {
+      height: 2rem;
+    }
+    .verwijder-btn{
+      img{
+        height: 1rem;
+        width: fit-content;
+      }
+      background-color: $white;
+    }
+  }
+
+  .bestel-btn, .bekijk-btn{
+    width: 20rem;
+    margin: 1rem auto;
+    font-size: 15pt;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+  }
+  .lege-winkelmand{
+    text-align: center;
+    margin: 2rem 0;
+  }
+  .cart-buttons{
+    text-align: center;
+    .leegmaken-btn{
+      margin: 0 0.5rem;
+      background-color: $white;
+    }
+    .verder-btn{
+      margin: 0 0.5rem;
+    }
+  }
+
+}
+.main-bedankt{
+  width: 60%;
+  margin: 5rem auto;
+  text-align: center;
+  h1 {
+    font-family: $titels;
+    color: $primary-color;
+    text-align: center;
+  }
+  p{
+    margin: 2rem 0;
+  }
+  a{
+    text-decoration: none;
+  }
+}

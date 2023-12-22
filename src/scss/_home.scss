@@ -1,0 +1,86 @@
+@use 'base' as *;
+
+header {
+  .header {
+    height: 30rem;
+    width: 100%;
+    background-image: url("@/assets/header.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    h1 {
+      width: 50%;
+      font-family: $titels;
+      margin-left: 5%;
+      padding: 15rem 0 0 2rem;
+      color: $primary-color;
+      text-align: left;
+      font-size: 50pt;
+    }
+  }
+}
+
+.main-home {
+  margin: 5rem 0;
+
+  h1 {
+    text-align: center;
+    font-family: $titels;
+    font-size: 25pt;
+    color: $secondary-color;
+    padding-bottom: 2rem;
+  }
+
+  .favorieten {
+    @include flex-between();
+    width: 70%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+
+    a {
+      color: $black;
+      text-decoration: none;
+    }
+
+    .last-card {
+      h2 {
+        text-align: center;
+        margin-top: 2rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px){
+  header{
+    .header{
+      h1{
+        font-size: 30pt;
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px){
+  header {
+    .header {
+      height: 20rem;
+
+      h1 {
+        font-size: 20pt;
+      }
+    }
+  }
+  .main-home{
+    h1{
+      font-size: 18pt;
+    }
+    .favorieten{
+      width: 100%;
+      flex-wrap: wrap;
+    }
+  }
+
+}
