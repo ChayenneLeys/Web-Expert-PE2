@@ -5,7 +5,7 @@ import loginView from '@/views/loginView.vue'
 import winkelMandView from '@/views/winkelMandView.vue'
 import itemView from "@/views/itemView.vue"
 import bedanktView from "@/views/bedanktView.vue";
-//import usersView from "@/views/UsersView.vue";
+import usersView from "@/views/UsersView.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -39,6 +39,11 @@ const router = createRouter({
             path: '/bedankt',
             name: 'bedankt',
             component: bedanktView
+        },
+        {
+            path:'/users',
+            name:'users',
+            component: usersView
         }
         ]
 })

@@ -2,21 +2,23 @@
   <div class="aanmelden">
     <h1>Log in</h1>
     <p>Meld je aan om de plant te vinden die echt bij je past.</p>
-    <v-form v-model="valid">
-      <label for="mailadres">e-mail</label><br/>
-      <input class="rounded" type="email" id="mailadres" name="email" required><br/>
+    <form @submit.prevent="login">
+      <label for="mailadres">E-mail</label><br/>
+      <input class="rounded" type="email" id="mailadres" name="email" v-model="email" required><br/>
       <label for="password">Wachtwoord</label><br/>
-      <input class="rounded" type="password" id="password" name="wachtwoord" required><br/>
+      <input class="rounded" type="password" id="password" name="wachtwoord" v-model="password" required><br/>
       <input type="submit" value="Aanmelden" class="button">
       <a id="wachtwoord-vergeten" href="#" style="margin-left: 2rem">Wachtwoord vergeten?</a>
-    </v-form>
+    </form>
   </div>
 </template>
 
 <script>
+import { useUserStore } from "@/stores/userStore";
+
 export default {
-  name: "aanmeldComponent"
-}
+  name: "aanmeldComponent",
+};
 </script>
 
 <style scoped>
